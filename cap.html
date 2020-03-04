@@ -1,0 +1,462 @@
+<html>
+    <head>
+        <title>Survive in the Wilderness...</title>
+        <style>
+            div#left{
+              border-left: 20px solid green;
+              height: 622.5px;
+              position: absolute;
+              left: 20%;
+              margin-left: -10px;
+              top: 17.5
+            }
+            
+            div#middleleftleft{
+              border-left: 20px solid green;
+              height: 622.5px;
+              position: absolute;
+              left: 32%;
+              margin-left: -10px;
+              top: 17.5
+            }
+            
+            div#middleleft{
+              border-left: 20px solid green;
+              height: 622.5px;
+              position: absolute;
+              left: 44%;
+              margin-left: -10px;
+              top: 17.5
+            }
+
+            div#middleright{
+              border-left: 20px solid green;
+              height: 622.5px;
+              position: absolute;
+              left: 56%;
+              margin-left: -10px;
+              top: 17.5
+            }
+            
+            div#middlerightright{
+              border-left: 20px solid green;
+              height: 622.5px;
+              position: absolute;
+              left: 68%;
+              margin-left: -10px;
+              top: 17.5
+            }
+            
+            div#right{
+              border-left: 20px solid green;
+              height: 622.5px;
+              position: absolute;
+              left: 80%;
+              margin-left: -10px;
+              top: 17.5
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+
+        <canvas id="canvas" width="1340" height="640"></canvas>
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+        <script src="canvasutil.js"></script>
+        <div id="container">
+            <div id="left"></div>
+            <div id="middleleftleft"></div>
+            <div id="middleleft"></div>
+            <div id="middleright"></div>
+            <div id="middlerightright"></div>
+            <div id="right"></div>
+        </div>
+
+
+        <script> 
+            
+            
+            // TODO: Complete code below
+            //
+
+            var end = false;
+            var blockSize = 10;
+            var widthInBlocks = width / blockSize;
+            var heightInBlocks = height / blockSize;
+            //Defining Score
+            var score = 0;
+            
+            // Drawing the border
+            var drawBorder = function() {
+                ctx.fillStyle = "Gray";
+                ctx.fillRect(0, 0, width, blockSize);
+                ctx.fillRect(0, height - blockSize, width, blockSize);
+                ctx.fillRect(0, 0, blockSize, height);
+                ctx.fillRect(width - blockSize, 0, blockSize, height);
+            };
+            
+            // Creating the score
+            var drawscore = function() {
+                ctx.font = "20px Courier";
+                ctx.fillStyle = "Black";
+                ctx.textAlign = "left";
+                ctx.textBaseline = "top"
+                // Fix the blockSize
+                ctx.fillText("Score: " + score, 50, 50);
+                /* let head = new Block(7, 5);
+                   if (head === apple.position) {
+                       score += 1;
+                       appleMove = true;
+                   }    
+                
+                
+                */
+            };
+            
+            var gameoverscore = function() {
+                ctx.font = "20px Courier";
+                ctx.fillStyle = "White";
+                ctx.textAlign = "left";
+                ctx.textBaseline = "top"
+                // Fix the blockSize
+                ctx.fillText("Score: " + score, 50, 50);
+            }
+            
+            //When game is done
+            var gameover = function() {
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(0, 0, width, height);
+                ctx.font = "60px Courier";
+                ctx.fillStyle = "White";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle"
+                // Fix the blockSize
+                
+                ctx.fillText("Game over" , width / 2, height / 2);
+                gameoverscore();
+                end = true;
+            };
+            
+            // Creating blocks
+            var Block = function(col, row) {
+                this.col = col;
+                this.row = row;
+                
+            };
+            
+            //Drawing bloacks
+            Block.prototype.drawSquare = function (color) {
+                let x = parseInt(this.col * blockSize);
+                let y = parseInt(this.row * blockSize);
+                ctx.fillStyle = color;
+                ctx.fillRect(x, y, blockSize, blockSize);
+                //console.log(`${color}, ${x}, ${y}`);
+            };
+            
+            Block.prototype.drawCircle = function (color) {
+                let centerx = this.col * blockSize + blockSize / 2;
+                let centery = this.row * blockSize + blockSize / 2;
+                ctx.fillStyle = color;
+                circle(centerx, centery, blockSize / 2, true);
+            };
+            
+            Block.prototype.equal = function (other) {
+                if (this.col === other.col && this.row === other.row) {
+                    return true;
+                }
+                return false;
+            }
+            var block = new Block();
+            //creating the snake class            
+            var Snake = function() {
+                this.segments = [
+                    new Block(66, 55),
+                    new Block(67, 55),
+                    new Block(65, 56),
+                    new Block(66, 56),
+                    new Block(67, 56),
+                    new Block(65, 57),
+                    new Block(66, 57),
+                    new Block(67, 57),
+                    new Block(68, 57),
+                    new Block(65, 58),
+                    new Block(66, 58),
+                    new Block(67, 58),
+                    new Block(68, 58)
+                ];
+                
+                this.direction = "right";
+                this.nextDirection = "right";
+            };
+            
+            
+            
+            //Drawing bloacks
+            
+            
+            
+            //Drawing the snake
+            Snake.prototype.draw = function(color) {
+                this.segments[0].drawSquare("Gray");
+                this.segments[1].drawSquare("Gray");
+                this.segments[2].drawSquare("Black");
+                this.segments[3].drawSquare("Green");
+                this.segments[4].drawSquare("Black");
+                this.segments[5].drawSquare("Gray");
+                this.segments[6].drawSquare("Black");
+                this.segments[7].drawSquare("Black");
+                this.segments[8].drawSquare("Green");
+                this.segments[9].drawSquare("Green");
+                this.segments[10].drawSquare("Green");
+                this.segments[11].drawSquare("Gray");
+                this.segments[12].drawSquare("Black");
+            };
+            
+            var directions = {
+                37: "left", 
+                39: "right"
+            };
+            
+            Snake.prototype.setDirection = function (newDirection) {
+                console.log(newDirection);
+                this.nextDirection = newDirection;
+            };
+            
+            var pos = 0;
+            
+            Snake.prototype.move = function(direct) {
+                let head = this.segments;
+                this.direction = this.nextDirection;
+                console.log(pos);
+                if (end != true) {
+                    if (direct === "right" && pos < 2) {
+                        for (i = 0; i < head.length; i++) {
+                            head[i] = new Block(head[i].col + 16.5, head[i].row);
+                               
+                        }
+                        pos += 1;
+                    } else if (direct === "left" && pos > -2) {
+                        for (i = 0; i < head.length; i++) {
+                            head[i] = new Block(head[i].col - 16.5, head[i].row);
+                            
+                        }
+                        pos -= 1;
+                    }
+                } else {
+                    
+                }
+//                } else if (this.direction === "up") {
+//                    newHead = new Block(head.col, head.row - 1);
+//                } else if (this.direction === "down") {
+//                    newHead = new Block(head.col, head.row + 1);
+//                }
+                
+                if (this.checkCollision(head)) {
+                    gameover();
+                    return;
+                }
+                
+//                this.segments = head;
+                
+                console.log(`Before: ${this.segments.length}`);
+//                New code ++
+//                if(head.equal(apple.position)) {
+//                    score++;
+//                    apple.move();
+//                } else {
+//                    this.segments.pop();
+//                }
+                console.log(`After: ${this.segments.length}`);
+                
+            };
+            
+            //new code
+            Snake.prototype.checkCollision = function(head) {
+                
+            };
+            
+            //New code ++
+            var Lava = function() {
+                this.blocks = [
+                    new Block(27, 0),
+                    new Block(27, 1),
+                    new Block(27, 2),
+                    new Block(27, 3),
+                    new Block(27, 4),
+                    new Block(27, 5),
+                    new Block(27, 6),
+                    new Block(28, 0),
+                    new Block(28, 1),
+                    new Block(28, 2),
+                    new Block(28, 3),
+                    new Block(28, 4),
+                    new Block(28, 5),
+                    new Block(28, 6),
+                    new Block(29, 0),
+                    new Block(29, 1),
+                    new Block(29, 2),
+                    new Block(29, 3),
+                    new Block(29, 4),
+                    new Block(29, 5),
+                    new Block(29, 6),
+                    new Block(30, 0),
+                    new Block(30, 1),
+                    new Block(30, 2),
+                    new Block(30, 3),
+                    new Block(30, 4),
+                    new Block(30, 5),
+                    new Block(30, 6),
+                    new Block(31, 0),
+                    new Block(31, 1),
+                    new Block(31, 2),
+                    new Block(31, 3),
+                    new Block(31, 4),
+                    new Block(31, 5),
+                    new Block(31, 6),
+                    new Block(32, 0),
+                    new Block(32, 1),
+                    new Block(32, 2),
+                    new Block(32, 3),
+                    new Block(32, 4),
+                    new Block(32, 5),
+                    new Block(32, 6),
+                    new Block(33, 0),
+                    new Block(33, 1),
+                    new Block(33, 2),
+                    new Block(33, 3),
+                    new Block(33, 4),
+                    new Block(33, 5),
+                    new Block(33, 6),
+                    new Block(34, 0),
+                    new Block(34, 1),
+                    new Block(34, 2),
+                    new Block(34, 3),
+                    new Block(34, 4),
+                    new Block(34, 5),
+                    new Block(34, 6),
+                    new Block(35, 0),
+                    new Block(35, 1),
+                    new Block(35, 2),
+                    new Block(35, 3),
+                    new Block(35, 4),
+                    new Block(35, 5),
+                    new Block(35, 6),
+                    new Block(36, 0),
+                    new Block(36, 1),
+                    new Block(36, 2),
+                    new Block(36, 3),
+                    new Block(36, 4),
+                    new Block(36, 5),
+                    new Block(36, 6),
+                    new Block(37, 0),
+                    new Block(37, 1),
+                    new Block(37, 2),
+                    new Block(37, 3),
+                    new Block(37, 4),
+                    new Block(37, 5),
+                    new Block(37, 6),
+                    new Block(38, 0),
+                    new Block(38, 1),
+                    new Block(38, 2),
+                    new Block(38, 3),
+                    new Block(38, 4),
+                    new Block(38, 5),
+                    new Block(38, 6),
+                    new Block(39, 0),
+                    new Block(39, 1),
+                    new Block(39, 2),
+                    new Block(39, 3),
+                    new Block(39, 4),
+                    new Block(39, 5),
+                    new Block(39, 6),
+                    new Block(40, 0),
+                    new Block(40, 1),
+                    new Block(40, 2),
+                    new Block(40, 3),
+                    new Block(40, 4),
+                    new Block(40, 5),
+                    new Block(40, 6),
+                    new Block(41, 0),
+                    new Block(41, 1),
+                    new Block(41, 2),
+                    new Block(41, 3),
+                    new Block(41, 4),
+                    new Block(41, 5),
+                    new Block(41, 6)
+                ];
+            };
+            
+            var no_more = false;
+            
+            //New code++
+            Lava.prototype.draw = function() {
+                if (no_more != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more = true;
+                    }
+                }
+                no_more = true;
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            //New code ++
+            Lava.prototype.move = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 1);
+                } 
+            };
+            
+            //New code ++
+            $("body").keydown(function (event) {
+                console.log("hi");
+                let dir = directions[event.keyCode];
+                console.log(dir);
+                if (dir == "right" || dir == "left") {
+                    snake.move(dir);
+                } 
+                if (dir !== undefined) {
+                    snake.setDirection(dir);
+                   
+                }
+            });
+            
+            
+            
+            var snake = new Snake();
+            var lava = new Lava();
+            var lava1 = new Lava();
+            var lava2 = new Lava();
+            var int = setInterval(function() {
+                ctx.clearRect(0, 0, width, height);
+                drawscore();
+                snake.draw();
+                lava.draw();
+                lava.move();
+                setTimeout(function() {
+                    lava1.draw();
+                    lava1.move();
+                }, 3000);
+                setTimeout(function() {
+                    lava2.draw();
+                    lava2.move();
+                }, 1500);
+                //new code ++
+                drawBorder();
+            }, 100);
+            
+            
+            
+            
+
+            
+            
+            
+           
+</script>
+</body>
+</html>
