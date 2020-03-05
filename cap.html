@@ -398,6 +398,16 @@
             var no_more8 = false;
             var no_more9 = false;
             var no_more10 = false;
+            var no_more11 = false;
+            var no_more12 = false;
+            var no_more13 = false;
+            var no_more14 = false;
+            var no_more15 = false;
+            var no_more16 = false;
+            var no_more17 = false;
+            var no_more18 = false;
+            var no_more19 = false;
+            var no_more20 = false;
             
 //            this.blocks2 = [];
 //            this.blocks3 = [];
@@ -557,6 +567,135 @@
                 } 
             };
             
+            Lava.prototype.draw11 = function(num) {
+                if (no_more11 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more11 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw12 = function(num) {
+                if (no_more12 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more12 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw13 = function(num) {
+                if (no_more13 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more13 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw14 = function(num) {
+                if (no_more10 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more14 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw15 = function(num) {
+                if (no_more10 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more15 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw16 = function(num) {
+                if (no_more10 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more16 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw17 = function(num) {
+                if (no_more17 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more17 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw18 = function(num) {
+                if (no_more18 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more18 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw19 = function(num) {
+                if (no_more19 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more19 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            Lava.prototype.draw20 = function(num) {
+                if (no_more20 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        no_more20 = true;
+                    }
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
             //New code ++
             Lava.prototype.move = function() {
                 for (i = 0; i < this.blocks.length; i++) {
@@ -665,6 +804,16 @@
             var lava8 = new Lava();
             var lava9 = new Lava();
             var lava10 = new Lava();
+            var lava11 = new Lava();
+            var lava12 = new Lava();
+            var lava13 = new Lava();
+            var lava14 = new Lava();
+            var lava15 = new Lava();
+            var lava16 = new Lava();
+            var lava17 = new Lava();
+            var lava18 = new Lava();
+            var lava19 = new Lava();
+            var lava20 = new Lava();
             var int = setInterval(function() {
                 ctx.clearRect(0, 0, width, height);
                 drawscore();
@@ -710,7 +859,47 @@
                 setTimeout(function() {
                     lava10.draw10();
                     lava10.move10();
-                }, 3000);
+                }, 30000);
+                setTimeout(function() {
+                    lava11.draw11();
+                    lava11.move10();
+                }, 33000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move10();
+                }, 36000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move10();
+                }, 39000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move10();
+                }, 42000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move10();
+                }, 45000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move11();
+                }, 48000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move11();
+                }, 51000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move11();
+                }, 54000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move12();
+                }, 57000);
+                setTimeout(function() {
+                    lava10.draw10();
+                    lava10.move12();
+                }, 60000);
                 //new code ++
                 drawBorder();
             }, 100);
