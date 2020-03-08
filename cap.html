@@ -295,7 +295,905 @@
                 };
                 console.log(lava1.y + " lavayaaa");
             };
+            var toxicWater = function() {
+                this.blocks = [
+                    new Block(27, 0),
+                    new Block(27, 1),
+                    new Block(27, 2),
+                    new Block(27, 3),
+                    new Block(27, 4),
+                    new Block(27, 5),
+                    new Block(27, 6),
+                    new Block(28, 0),
+                    new Block(28, 1),
+                    new Block(28, 2),
+                    new Block(28, 3),
+                    new Block(28, 4),
+                    new Block(28, 5),
+                    new Block(28, 6),
+                    new Block(29, 0),
+                    new Block(29, 1),
+                    new Block(29, 2),
+                    new Block(29, 3),
+                    new Block(29, 4),
+                    new Block(29, 5),
+                    new Block(29, 6),
+                    new Block(30, 0),
+                    new Block(30, 1),
+                    new Block(30, 2),
+                    new Block(30, 3),
+                    new Block(30, 4),
+                    new Block(30, 5),
+                    new Block(30, 6),
+                    new Block(31, 0),
+                    new Block(31, 1),
+                    new Block(31, 2),
+                    new Block(31, 3),
+                    new Block(31, 4),
+                    new Block(31, 5),
+                    new Block(31, 6),
+                    new Block(32, 0),
+                    new Block(32, 1),
+                    new Block(32, 2),
+                    new Block(32, 3),
+                    new Block(32, 4),
+                    new Block(32, 5),
+                    new Block(32, 6),
+                    new Block(33, 0),
+                    new Block(33, 1),
+                    new Block(33, 2),
+                    new Block(33, 3),
+                    new Block(33, 4),
+                    new Block(33, 5),
+                    new Block(33, 6),
+                    new Block(34, 0),
+                    new Block(34, 1),
+                    new Block(34, 2),
+                    new Block(34, 3),
+                    new Block(34, 4),
+                    new Block(34, 5),
+                    new Block(34, 6),
+                    new Block(35, 0),
+                    new Block(35, 1),
+                    new Block(35, 2),
+                    new Block(35, 3),
+                    new Block(35, 4),
+                    new Block(35, 5),
+                    new Block(35, 6),
+                    new Block(36, 0),
+                    new Block(36, 1),
+                    new Block(36, 2),
+                    new Block(36, 3),
+                    new Block(36, 4),
+                    new Block(36, 5),
+                    new Block(36, 6),
+                    new Block(37, 0),
+                    new Block(37, 1),
+                    new Block(37, 2),
+                    new Block(37, 3),
+                    new Block(37, 4),
+                    new Block(37, 5),
+                    new Block(37, 6),
+                    new Block(38, 0),
+                    new Block(38, 1),
+                    new Block(38, 2),
+                    new Block(38, 3),
+                    new Block(38, 4),
+                    new Block(38, 5),
+                    new Block(38, 6),
+                    new Block(39, 0),
+                    new Block(39, 1),
+                    new Block(39, 2),
+                    new Block(39, 3),
+                    new Block(39, 4),
+                    new Block(39, 5),
+                    new Block(39, 6),
+                    new Block(40, 0),
+                    new Block(40, 1),
+                    new Block(40, 2),
+                    new Block(40, 3),
+                    new Block(40, 4),
+                    new Block(40, 5),
+                    new Block(40, 6),
+                    new Block(41, 0),
+                    new Block(41, 1),
+                    new Block(41, 2),
+                    new Block(41, 3),
+                    new Block(41, 4),
+                    new Block(41, 5),
+                    new Block(41, 6)
+                ];
+                this.x = this.blocks[0].col;
+                this.y = this.blocks[6].row;
+                this.width = 15;
+                this.height = 7;
+            };
             
+            var non_more = false;
+            var non_more1 = false;
+            var non_more2 = false;
+            var non_more3 = false;
+            var non_more4 = false;
+            var non_more5 = false;
+            var non_more6 = false;
+            var non_more7 = false;
+            var non_more8 = false;
+            var non_more9 = false;
+            var non_more10 = false;
+            var non_more11 = false;
+            var non_more12 = false;
+            var non_more13 = false;
+            var n_more14 = false;
+            var non_more15 = false;
+            var non_more16 = false;
+            var non_more17 = false;
+            var non_more18 = false;
+            var non_more19 = false;
+            var non_more20 = false;
+            var non_more20 = false;
+            var non_more21 = false;
+            var non_more22 = false;
+            var non_more23 = false;
+            var non_more24 = false;
+            var non_more25 = false;
+            var non_more26 = false;
+            var non_more27 = false;
+            var non_more28 = false;
+            var non_more29 = false;
+            var non_more30 = false;
+            var non_more31 = false;
+            var non_more32 = false;
+            var non_more33 = false;
+            var non_more34 = false;
+            var non_more35 = false;
+            var non_more36 = false;
+            var non_more37 = false;
+            var non_more38 = false;
+            var non_more39 = false;
+            var non_more40 = false;
+            
+//            this.blocks2 = [];
+//            this.blocks3 = [];
+//            this.blocks4 = [];
+//            this.blocks5 = [];
+//            
+//            for (i = 0; i < this.blocks.length; i++) {
+//                this.blocks2[i] = this.blocks[i] + 16.4
+//                this.blocks3[i] = this.blocks[i] + 16.4 * 2
+//                this.blocks4[i] = this.blocks[i] + 16.4 * 3
+//                this.blocks5[i] = this.blocks[i] + 16.4 * 4
+//            }
+            
+            //New code++
+            ToxicWater.prototype.draw = function(num) {
+                if (non_more != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more = true;
+                        
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            //New code ++
+            
+            ToxicWater.prototype.draw1 = function(num) {
+                if (non_more1 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more1 = true;
+                        
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw2 = function(num) {
+                if (non_more2 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more2 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw3 = function(num) {
+                if (non_more3 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more3 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw4 = function(num) {
+                if (non_more4 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more4 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw5 = function(num) {
+                if (non_more5 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more5 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw6 = function(num) {
+                if (non_more6 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more6 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw7 = function(num) {
+                if (non_more7 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more7 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw8 = function(num) {
+                if (non_more8 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more8 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw9 = function(num) {
+                if (non_more9 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more9 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw10 = function(num) {
+                if (non_more10 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more10 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw11 = function(num) {
+                if (non_more11 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more11 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw12 = function(num) {
+                if (non_more12 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more12 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw13 = function(num) {
+                if (non_more13 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more13 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw14 = function(num) {
+                if (non_more14 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more14 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw15 = function(num) {
+                if (non_more15 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more15 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw16 = function(num) {
+                if (non_more16 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more16 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw17 = function(num) {
+                if (non_more17 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more17 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw18 = function(num) {
+                if (non_more18 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more18 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw19 = function(num) {
+                if (non_more19 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more19 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw20 = function(num) {
+                if (non_more20 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more20 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            ToxicWater.prototype.draw21 = function(num) {
+                if (non_more21 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more21 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw22 = function(num) {
+                if (non_more22 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more22 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw23 = function(num) {
+                if (non_more23 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more23 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw24 = function(num) {
+                if (non_more24 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more24 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw25 = function(num) {
+                if (non_more25 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more25 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw26 = function(num) {
+                if (non_more26 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more26 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw27 = function(num) {
+                if (non_more27 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more27 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw28 = function(num) {
+                if (non_more28 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more28 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw29 = function(num) {
+                if (non_more29 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more29 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw30 = function(num) {
+                if (non_more30 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more30 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw31 = function(num) {
+                if (non_more31 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more31 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw32 = function(num) {
+                if (non_more32 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more32 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw33 = function(num) {
+                if (non_more33 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more33 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw34 = function(num) {
+                if (non_more34 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more34 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw35 = function(num) {
+                if (non_more35 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more35 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw36 = function(num) {
+                if (non_more36 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more36 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw37 = function(num) {
+                if (non_more37 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more37 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw38 = function(num) {
+                if (non_more38 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more38 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw39 = function(num) {
+                if (non_more39 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more39 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            
+            ToxicWater.prototype.draw40 = function(num) {
+                if (non_more40 != true) {
+                    num = Math.floor(Math.random() * 5) * 16.4;
+                    for (k = 0; k < this.blocks.length; k++) {
+                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
+                        non_more40 = true;
+                    }
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                }
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].drawSquare("Orange")
+                } 
+            };
+            //New code ++
+            ToxicWater.prototype.move = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 1);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move1 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 2);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move2 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 2);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move3 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 3);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move4 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 4);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move5 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 5);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move6 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 6);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move7 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 7);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move8 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 8);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move9 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 9);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move10 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 10);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move11 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 12);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move12 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 15);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
+            
+            ToxicWater.prototype.move13 = function() {
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i] = new Block(this.blocks[i].col, this.blocks[i].row + 20);
+                    this.x = this.blocks[0].col;
+                    this.y = this.blocks[6].row;
+                } 
+            };
             //New code ++
             var Lava = function() {
                 this.blocks = [
