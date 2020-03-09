@@ -61,16 +61,14 @@
     </head>
     <body>
 
-            <canvas id="canvas" width="1340" height="640"></canvas>
+        <canvas id="canvas" width="1340" height="640"></canvas>
         <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
         <script src="canvasutil.js"></script>
         <div id="container">
-            <div id="left"></div>
             <div id="middleleftleft"></div>
             <div id="middleleft"></div>
             <div id="middleright"></div>
             <div id="middlerightright"></div>
-            <div id="right"></div>
         </div>
 
 
@@ -225,7 +223,6 @@
                 this.segments[13].drawSquare("Green");
                 this.segments[14].drawSquare("Gray");
                 this.segments[15].drawSquare("Green");
-                console.log("checkcollision");
                 if (this.checkCollision(lava)) {
                     gameover();
                     return;
@@ -246,7 +243,7 @@
             Snake.prototype.move = function(direct) {
                 this.direction = this.nextDirection;
                 if (end != true) {
-                    if (direct === "right" && pos < 2) {
+                    if (direct === "right" && pos < 1) {
                         for (i = 0; i < this.segments.length; i++) {
                             this.segments[i] = new Block(this.segments[i].col + 16.5, this.segments[i].row);
                             this.x = this.segments[0].col;
@@ -254,7 +251,7 @@
    
                         }
                         pos += 1;
-                    } else if (direct === "left" && pos > -2) {
+                    } else if (direct === "left" && pos > -1) {
                         for (i = 0; i < this.segments.length; i++) {
                             this.segments[i] = new Block(this.segments[i].col - 16.5, this.segments[i].row);
                             this.x = this.segments[0].col;
@@ -288,15 +285,13 @@
             
             //new code
             Snake.prototype.checkCollision = function() {
-                console.log(lava.y + "lavay");
-                console.log(lava.x + "lavax");
-                if (!(((snake.y + snake.height) < (lava.y- 4)) || (snake.y > (lava.y + lava.height- 4)) || ((snake.x + snake.width) < lava.x) || (snake.x > (lava.x + lava.width))) || !(((snake.y + snake.height) < (lava1.y- 4)) || (snake.y > (lava1.y + lava1.height- 4)) || ((snake.x + snake.width) < lava1.x) || (snake.x > (lava1.x + lava1.width))) || !(((snake.y + snake.height) < (lava2.y- 4)) || (snake.y > (lava2.y + lava2.height- 4)) || ((snake.x + snake.width) < lava2.x) || (snake.x > (lava2.x + lava2.width))) || !(((snake.y + snake.height) < (lava3.y- 4)) || (snake.y > (lava3.y + lava3.height- 4)) || ((snake.x + snake.width) < lava3.x) || (snake.x > (lava3.x + lava3.width))) || !(((snake.y + snake.height) < (lava4.y- 4)) || (snake.y > (lava4.y + lava4.height- 4)) || ((snake.x + snake.width) < lava4.x) || (snake.x > (lava4.x + lava4.width))) || !(((snake.y + snake.height) < (lava5.y- 4)) || (snake.y > (lava5.y + lava5.height- 4)) || ((snake.x + snake.width) < lava5.x) || (snake.x > (lava5.x + lava5.width))) || !(((snake.y + snake.height) < (lava6.y- 4)) || (snake.y > (lava6.y + lava6.height- 4)) || ((snake.x + snake.width) < lava6.x) || (snake.x > (lava6.x + lava6.width))) || !(((snake.y + snake.height) < (lava7.y- 4)) || (snake.y > (lava7.y + lava7.height- 4)) || ((snake.x + snake.width) < lava7.x) || (snake.x > (lava7.x + lava7.width))) || !(((snake.y + snake.height) < (lava8.y- 4)) || (snake.y > (lava8.y + lava8.height- 4)) || ((snake.x + snake.width) < lava8.x) || (snake.x > (lava8.x + lava8.width))) || !(((snake.y + snake.height) < (lava9.y- 4)) || (snake.y > (lava9.y + lava9.height- 4)) || ((snake.x + snake.width) < lava9.x) || (snake.x > (lava9.x + lava9.width))) || !(((snake.y + snake.height) < (lava10.y- 4)) || (snake.y > (lava10.y + lava10.height- 4)) || ((snake.x + snake.width) < lava10.x) || (snake.x > (lava10.x + lava10.width))) || !(((snake.y + snake.height) < (lava11.y- 4)) || (snake.y > (lava11.y + lava11.height- 4)) || ((snake.x + snake.width) < lava11.x) || (snake.x > (lava11.x + lava11.width))) || !(((snake.y + snake.height) < (lava12.y- 4)) || (snake.y > (lava12.y + lava12.height- 4)) || ((snake.x + snake.width) < lava12.x) || (snake.x > (lava12.x + lava12.width))) || !(((snake.y + snake.height) < (lava13.y- 4)) || (snake.y > (lava13.y + lava13.height- 4)) || ((snake.x + snake.width) < lava13.x) || (snake.x > (lava13.x + lava13.width))) || !(((snake.y + snake.height) < (lava14.y- 4)) || (snake.y > (lava14.y + lava14.height- 4)) || ((snake.x + snake.width) < lava14.x) || (snake.x > (lava14.x + lava14.width))) || !(((snake.y + snake.height) < (lava15.y- 4)) || (snake.y > (lava15.y + lava15.height- 4)) || ((snake.x + snake.width) < lava15.x) || (snake.x > (lava15.x + lava15.width))) || !(((snake.y + snake.height) < (lava16.y- 4)) || (snake.y > (lava16.y + lava16.height- 4)) || ((snake.x + snake.width) < lava16.x) || (snake.x > (lava16.x + lava16.width))) || !(((snake.y + snake.height) < (lava17.y- 4)) || (snake.y > (lava17.y + lava17.height- 4)) || ((snake.x + snake.width) < lava17.x) || (snake.x > (lava17.x + lava17.width))) || !(((snake.y + snake.height) < (lava18.y- 4)) || (snake.y > (lava18.y + lava18.height- 4)) || ((snake.x + snake.width) < lava18.x) || (snake.x > (lava18.x + lava18.width))) || !(((snake.y + snake.height) < (lava19.y- 4)) || (snake.y > (lava19.y + lava19.height- 4)) || ((snake.x + snake.width) < lava19.x) || (snake.x > (lava19.x + lava19.width))) || !(((snake.y + snake.height) < (lava20.y- 4)) || (snake.y > (lava20.y + lava20.height- 4)) || ((snake.x + snake.width) < lava20.x) || (snake.x > (lava20.x + lava20.width))) || !(((snake.y + snake.height) < (lava21.y- 4)) || (snake.y > (lava21.y + lava21.height- 4)) || ((snake.x + snake.width) < lava21.x) || (snake.x > (lava21.x + lava21.width))) || !(((snake.y + snake.height) < (lava22.y- 4)) || (snake.y > (lava22.y + lava22.height- 4)) || ((snake.x + snake.width) < lava22.x) || (snake.x > (lava22.x + lava22.width))) || !(((snake.y + snake.height) < (lava23.y- 4)) || (snake.y > (lava23.y + lava23.height- 4)) || ((snake.x + snake.width) < lava23.x) || (snake.x > (lava23.x + lava23.width))) || !(((snake.y + snake.height) < (lava24.y- 4)) || (snake.y > (lava24.y + lava24.height- 4)) || ((snake.x + snake.width) < lava24.x) || (snake.x > (lava24.x + lava24.width))) || !(((snake.y + snake.height) < (lava25.y- 4)) || (snake.y > (lava25.y + lava25.height- 4)) || ((snake.x + snake.width) < lava25.x) || (snake.x > (lava25.x + lava25.width))) || !(((snake.y + snake.height) < (lava26.y- 4)) || (snake.y > (lava26.y + lava26.height- 4)) || ((snake.x + snake.width) < lava26.x) || (snake.x > (lava26.x + lava26.width))) || !(((snake.y + snake.height) < (lava27.y- 4)) || (snake.y > (lava27.y + lava27.height- 4)) || ((snake.x + snake.width) < lava27.x) || (snake.x > (lava27.x + lava27.width))) || !(((snake.y + snake.height) < (lava28.y- 4)) || (snake.y > (lava28.y + lava28.height- 4)) || ((snake.x + snake.width) < lava28.x) || (snake.x > (lava28.x + lava28.width))) || !(((snake.y + snake.height) < (lava29.y- 4)) || (snake.y > (lava29.y + lava29.height- 4)) || ((snake.x + snake.width) < lava29.x) || (snake.x > (lava29.x + lava29.width))) || !(((snake.y + snake.height) < (lava30.y- 4)) || (snake.y > (lava30.y + lava30.height- 4)) || ((snake.x + snake.width) < lava30.x) || (snake.x > (lava30.x + lava30.width))) || !(((snake.y + snake.height) < (lava31.y- 4)) || (snake.y > (lava31.y + lava31.height- 4)) || ((snake.x + snake.width) < lava31.x) || (snake.x > (lava31.x + lava31.width))) || !(((snake.y + snake.height) < (lava32.y- 4)) || (snake.y > (lava32.y + lava32.height- 4)) || ((snake.x + snake.width) < lava32.x) || (snake.x > (lava32.x + lava32.width))) || !(((snake.y + snake.height) < (lava33.y- 4)) || (snake.y > (lava33.y + lava33.height- 4)) || ((snake.x + snake.width) < lava33.x) || (snake.x > (lava33.x + lava33.width))) || !(((snake.y + snake.height) < (lava34.y- 4)) || (snake.y > (lava34.y + lava34.height- 4)) || ((snake.x + snake.width) < lava34.x) || (snake.x > (lava34.x + lava34.width))) || !(((snake.y + snake.height) < (lava35.y- 4)) || (snake.y > (lava35.y + lava35.height- 4)) || ((snake.x + snake.width) < lava35.x) || (snake.x > (lava35.x + lava35.width))) || !(((snake.y + snake.height) < (lava36.y- 4)) || (snake.y > (lava36.y + lava36.height- 4)) || ((snake.x + snake.width) < lava36.x) || (snake.x > (lava36.x + lava36.width))) || !(((snake.y + snake.height) < (lava37.y- 4)) || (snake.y > (lava37.y + lava37.height- 4)) || ((snake.x + snake.width) < lava37.x) || (snake.x > (lava37.x + lava37.width))) || !(((snake.y + snake.height) < (lava38.y- 4)) || (snake.y > (lava38.y + lava38.height- 4)) || ((snake.x + snake.width) < lava38.x) || (snake.x > (lava38.x + lava38.width))) || !(((snake.y + snake.height) < (lava39.y- 4)) || (snake.y > (lava39.y + lava39.height- 4)) || ((snake.x + snake.width) < lava39.x) || (snake.x > (lava39.x + lava39.width))) || !(((snake.y + snake.height) < (lava40.y- 4)) || (snake.y > (lava40.y + lava40.height- 4)) || ((snake.x + snake.width) < lava40.x) || (snake.x > (lava40.x + lava40.width)))) {
+                if (!(((snake.y + snake.height) < (toxicWater.y- 4)) || (snake.y > (toxicWater.y + toxicWater.height- 4)) || ((snake.x + snake.width) < toxicWater.x) || (snake.x > (toxicWater.x + toxicWater.width))) || !(((snake.y + snake.height) < (toxicWater1.y- 4)) || (snake.y > (toxicWater1.y + toxicWater1.height- 4)) || ((snake.x + snake.width) < toxicWater1.x) || (snake.x > (toxicWater1.x + toxicWater1.width))) || !(((snake.y + snake.height) < (toxicWater2.y- 4)) || (snake.y > (toxicWater2.y + toxicWater2.height- 4)) || ((snake.x + snake.width) < toxicWater2.x) || (snake.x > (toxicWater2.x + toxicWater2.width))) || !(((snake.y + snake.height) < (toxicWater3.y- 4)) || (snake.y > (toxicWater3.y + toxicWater3.height- 4)) || ((snake.x + snake.width) < toxicWater3.x) || (snake.x > (toxicWater3.x + toxicWater3.width))) || !(((snake.y + snake.height) < (toxicWater4.y- 4)) || (snake.y > (toxicWater4.y + toxicWater4.height- 4)) || ((snake.x + snake.width) < toxicWater4.x) || (snake.x > (toxicWater4.x + toxicWater4.width))) || !(((snake.y + snake.height) < (toxicWater5.y- 4)) || (snake.y > (toxicWater5.y + toxicWater5.height- 4)) || ((snake.x + snake.width) < toxicWater5.x) || (snake.x > (toxicWater5.x + toxicWater5.width))) || !(((snake.y + snake.height) < (toxicWater6.y- 4)) || (snake.y > (toxicWater6.y + toxicWater6.height- 4)) || ((snake.x + snake.width) < toxicWater6.x) || (snake.x > (toxicWater6.x + toxicWater6.width))) || !(((snake.y + snake.height) < (toxicWater7.y- 4)) || (snake.y > (toxicWater7.y + toxicWater7.height- 4)) || ((snake.x + snake.width) < toxicWater7.x) || (snake.x > (toxicWater7.x + toxicWater7.width))) || !(((snake.y + snake.height) < (toxicWater8.y- 4)) || (snake.y > (toxicWater8.y + toxicWater8.height- 4)) || ((snake.x + snake.width) < toxicWater8.x) || (snake.x > (toxicWater8.x + toxicWater8.width))) || !(((snake.y + snake.height) < (toxicWater9.y- 4)) || (snake.y > (toxicWater9.y + toxicWater9.height- 4)) || ((snake.x + snake.width) < toxicWater9.x) || (snake.x > (toxicWater9.x + toxicWater9.width))) || !(((snake.y + snake.height) < (toxicWater10.y- 4)) || (snake.y > (toxicWater10.y + toxicWater10.height- 4)) || ((snake.x + snake.width) < toxicWater10.x) || (snake.x > (toxicWater10.x + toxicWater10.width))) || !(((snake.y + snake.height) < (toxicWater11.y- 4)) || (snake.y > (toxicWater11.y + toxicWater11.height- 4)) || ((snake.x + snake.width) < toxicWater11.x) || (snake.x > (toxicWater11.x + toxicWater11.width))) || !(((snake.y + snake.height) < (toxicWater12.y- 4)) || (snake.y > (toxicWater12.y + toxicWater12.height- 4)) || ((snake.x + snake.width) < toxicWater12.x) || (snake.x > (toxicWater12.x + toxicWater12.width))) || !(((snake.y + snake.height) < (toxicWater13.y- 4)) || (snake.y > (toxicWater13.y + toxicWater13.height- 4)) || ((snake.x + snake.width) < toxicWater13.x) || (snake.x > (toxicWater13.x + toxicWater13.width))) || !(((snake.y + snake.height) < (toxicWater14.y- 4)) || (snake.y > (toxicWater14.y + toxicWater14.height- 4)) || ((snake.x + snake.width) < toxicWater14.x) || (snake.x > (toxicWater14.x + toxicWater14.width))) || !(((snake.y + snake.height) < (toxicWater15.y- 4)) || (snake.y > (toxicWater15.y + toxicWater15.height- 4)) || ((snake.x + snake.width) < toxicWater15.x) || (snake.x > (toxicWater15.x + toxicWater15.width))) || !(((snake.y + snake.height) < (toxicWater16.y- 4)) || (snake.y > (toxicWater16.y + toxicWater16.height- 4)) || ((snake.x + snake.width) < toxicWater16.x) || (snake.x > (toxicWater16.x + toxicWater16.width))) || !(((snake.y + snake.height) < (toxicWater17.y- 4)) || (snake.y > (toxicWater17.y + toxicWater17.height- 4)) || ((snake.x + snake.width) < toxicWater17.x) || (snake.x > (toxicWater17.x + toxicWater17.width))) || !(((snake.y + snake.height) < (toxicWater18.y- 4)) || (snake.y > (toxicWater18.y + toxicWater18.height- 4)) || ((snake.x + snake.width) < toxicWater18.x) || (snake.x > (toxicWater18.x + toxicWater18.width))) || !(((snake.y + snake.height) < (toxicWater19.y- 4)) || (snake.y > (toxicWater19.y + toxicWater19.height- 4)) || ((snake.x + snake.width) < toxicWater19.x) || (snake.x > (toxicWater19.x + toxicWater19.width))) || !(((snake.y + snake.height) < (toxicWater20.y- 4)) || (snake.y > (toxicWater20.y + toxicWater20.height- 4)) || ((snake.x + snake.width) < toxicWater20.x) || (snake.x > (toxicWater20.x + toxicWater20.width))) || !(((snake.y + snake.height) < (toxicWater21.y- 4)) || (snake.y > (toxicWater21.y + toxicWater21.height- 4)) || ((snake.x + snake.width) < toxicWater21.x) || (snake.x > (toxicWater21.x + toxicWater21.width))) || !(((snake.y + snake.height) < (toxicWater22.y- 4)) || (snake.y > (toxicWater22.y + toxicWater22.height- 4)) || ((snake.x + snake.width) < toxicWater22.x) || (snake.x > (toxicWater22.x + toxicWater22.width))) || !(((snake.y + snake.height) < (toxicWater23.y- 4)) || (snake.y > (toxicWater23.y + toxicWater23.height- 4)) || ((snake.x + snake.width) < toxicWater23.x) || (snake.x > (toxicWater23.x + toxicWater23.width))) || !(((snake.y + snake.height) < (toxicWater24.y- 4)) || (snake.y > (toxicWater24.y + toxicWater24.height- 4)) || ((snake.x + snake.width) < toxicWater24.x) || (snake.x > (toxicWater24.x + toxicWater24.width))) || !(((snake.y + snake.height) < (toxicWater25.y- 4)) || (snake.y > (toxicWater25.y + toxicWater25.height- 4)) || ((snake.x + snake.width) < toxicWater25.x) || (snake.x > (toxicWater25.x + toxicWater25.width))) || !(((snake.y + snake.height) < (toxicWater26.y- 4)) || (snake.y > (toxicWater26.y + toxicWater26.height- 4)) || ((snake.x + snake.width) < toxicWater26.x) || (snake.x > (toxicWater26.x + toxicWater26.width))) || !(((snake.y + snake.height) < (toxicWater27.y- 4)) || (snake.y > (toxicWater27.y + toxicWater27.height- 4)) || ((snake.x + snake.width) < toxicWater27.x) || (snake.x > (toxicWater27.x + toxicWater27.width))) || !(((snake.y + snake.height) < (toxicWater28.y- 4)) || (snake.y > (toxicWater28.y + toxicWater28.height- 4)) || ((snake.x + snake.width) < toxicWater28.x) || (snake.x > (toxicWater28.x + toxicWater28.width))) || !(((snake.y + snake.height) < (toxicWater29.y- 4)) || (snake.y > (toxicWater29.y + toxicWater29.height- 4)) || ((snake.x + snake.width) < toxicWater29.x) || (snake.x > (toxicWater29.x + toxicWater29.width))) || !(((snake.y + snake.height) < (toxicWater30.y- 4)) || (snake.y > (toxicWater30.y + toxicWater30.height- 4)) || ((snake.x + snake.width) < toxicWater30.x) || (snake.x > (toxicWater30.x + toxicWater30.width)))) {
                     return true;
                 };
-                if (!(((snake.y + snake.height) < (lava.y- 4)) || (snake.y > (lava.y + lava.height- 4)) || ((snake.x + snake.width) < lava.x) || (snake.x > (lava.x + lava.width))) || !(((snake.y + snake.height) < (lava1.y- 4)) || (snake.y > (lava1.y + lava1.height- 4)) || ((snake.x + snake.width) < lava1.x) || (snake.x > (lava1.x + lava1.width))) || !(((snake.y + snake.height) < (lava2.y- 4)) || (snake.y > (lava2.y + lava2.height- 4)) || ((snake.x + snake.width) < lava2.x) || (snake.x > (lava2.x + lava2.width))) || !(((snake.y + snake.height) < (lava3.y- 4)) || (snake.y > (lava3.y + lava3.height- 4)) || ((snake.x + snake.width) < lava3.x) || (snake.x > (lava3.x + lava3.width))) || !(((snake.y + snake.height) < (lava4.y- 4)) || (snake.y > (lava4.y + lava4.height- 4)) || ((snake.x + snake.width) < lava4.x) || (snake.x > (lava4.x + lava4.width))) || !(((snake.y + snake.height) < (lava5.y- 4)) || (snake.y > (lava5.y + lava5.height- 4)) || ((snake.x + snake.width) < lava5.x) || (snake.x > (lava5.x + lava5.width))) || !(((snake.y + snake.height) < (lava6.y- 4)) || (snake.y > (lava6.y + lava6.height- 4)) || ((snake.x + snake.width) < lava6.x) || (snake.x > (lava6.x + lava6.width))) || !(((snake.y + snake.height) < (lava7.y- 4)) || (snake.y > (lava7.y + lava7.height- 4)) || ((snake.x + snake.width) < lava7.x) || (snake.x > (lava7.x + lava7.width))) || !(((snake.y + snake.height) < (lava8.y- 4)) || (snake.y > (lava8.y + lava8.height- 4)) || ((snake.x + snake.width) < lava8.x) || (snake.x > (lava8.x + lava8.width))) || !(((snake.y + snake.height) < (lava9.y- 4)) || (snake.y > (lava9.y + lava9.height- 4)) || ((snake.x + snake.width) < lava9.x) || (snake.x > (lava9.x + lava9.width))) || !(((snake.y + snake.height) < (lava10.y- 4)) || (snake.y > (lava10.y + lava10.height- 4)) || ((snake.x + snake.width) < lava10.x) || (snake.x > (lava10.x + lava10.width))) || !(((snake.y + snake.height) < (lava11.y- 4)) || (snake.y > (lava11.y + lava11.height- 4)) || ((snake.x + snake.width) < lava11.x) || (snake.x > (lava11.x + lava11.width))) || !(((snake.y + snake.height) < (lava12.y- 4)) || (snake.y > (lava12.y + lava12.height- 4)) || ((snake.x + snake.width) < lava12.x) || (snake.x > (lava12.x + lava12.width))) || !(((snake.y + snake.height) < (lava13.y- 4)) || (snake.y > (lava13.y + lava13.height- 4)) || ((snake.x + snake.width) < lava13.x) || (snake.x > (lava13.x + lava13.width))) || !(((snake.y + snake.height) < (lava14.y- 4)) || (snake.y > (lava14.y + lava14.height- 4)) || ((snake.x + snake.width) < lava14.x) || (snake.x > (lava14.x + lava14.width))) || !(((snake.y + snake.height) < (lava15.y- 4)) || (snake.y > (lava15.y + lava15.height- 4)) || ((snake.x + snake.width) < lava15.x) || (snake.x > (lava15.x + lava15.width))) || !(((snake.y + snake.height) < (lava16.y- 4)) || (snake.y > (lava16.y + lava16.height- 4)) || ((snake.x + snake.width) < lava16.x) || (snake.x > (lava16.x + lava16.width))) || !(((snake.y + snake.height) < (lava17.y- 4)) || (snake.y > (lava17.y + lava17.height- 4)) || ((snake.x + snake.width) < lava17.x) || (snake.x > (lava17.x + lava17.width))) || !(((snake.y + snake.height) < (lava18.y- 4)) || (snake.y > (lava18.y + lava18.height- 4)) || ((snake.x + snake.width) < lava18.x) || (snake.x > (lava18.x + lava18.width))) || !(((snake.y + snake.height) < (lava19.y- 4)) || (snake.y > (lava19.y + lava19.height- 4)) || ((snake.x + snake.width) < lava19.x) || (snake.x > (lava19.x + lava19.width))) || !(((snake.y + snake.height) < (lava20.y- 4)) || (snake.y > (lava20.y + lava20.height- 4)) || ((snake.x + snake.width) < lava20.x) || (snake.x > (lava20.x + lava20.width))) || !(((snake.y + snake.height) < (lava21.y- 4)) || (snake.y > (lava21.y + lava21.height- 4)) || ((snake.x + snake.width) < lava21.x) || (snake.x > (lava21.x + lava21.width))) || !(((snake.y + snake.height) < (lava22.y- 4)) || (snake.y > (lava22.y + lava22.height- 4)) || ((snake.x + snake.width) < lava22.x) || (snake.x > (lava22.x + lava22.width))) || !(((snake.y + snake.height) < (lava23.y- 4)) || (snake.y > (lava23.y + lava23.height- 4)) || ((snake.x + snake.width) < lava23.x) || (snake.x > (lava23.x + lava23.width))) || !(((snake.y + snake.height) < (lava24.y- 4)) || (snake.y > (lava24.y + lava24.height- 4)) || ((snake.x + snake.width) < lava24.x) || (snake.x > (lava24.x + lava24.width))) || !(((snake.y + snake.height) < (lava25.y- 4)) || (snake.y > (lava25.y + lava25.height- 4)) || ((snake.x + snake.width) < lava25.x) || (snake.x > (lava25.x + lava25.width))) || !(((snake.y + snake.height) < (lava26.y- 4)) || (snake.y > (lava26.y + lava26.height- 4)) || ((snake.x + snake.width) < lava26.x) || (snake.x > (lava26.x + lava26.width))) || !(((snake.y + snake.height) < (lava27.y- 4)) || (snake.y > (lava27.y + lava27.height- 4)) || ((snake.x + snake.width) < lava27.x) || (snake.x > (lava27.x + lava27.width))) || !(((snake.y + snake.height) < (lava28.y- 4)) || (snake.y > (lava28.y + lava28.height- 4)) || ((snake.x + snake.width) < lava28.x) || (snake.x > (lava28.x + lava28.width))) || !(((snake.y + snake.height) < (lava29.y- 4)) || (snake.y > (lava29.y + lava29.height- 4)) || ((snake.x + snake.width) < lava29.x) || (snake.x > (lava29.x + lava29.width))) || !(((snake.y + snake.height) < (lava30.y- 4)) || (snake.y > (lava30.y + lava30.height- 4)) || ((snake.x + snake.width) < lava30.x) || (snake.x > (lava30.x + lava30.width))) || !(((snake.y + snake.height) < (lava31.y- 4)) || (snake.y > (lava31.y + lava31.height- 4)) || ((snake.x + snake.width) < lava31.x) || (snake.x > (lava31.x + lava31.width))) || !(((snake.y + snake.height) < (lava32.y- 4)) || (snake.y > (lava32.y + lava32.height- 4)) || ((snake.x + snake.width) < lava32.x) || (snake.x > (lava32.x + lava32.width))) || !(((snake.y + snake.height) < (lava33.y- 4)) || (snake.y > (lava33.y + lava33.height- 4)) || ((snake.x + snake.width) < lava33.x) || (snake.x > (lava33.x + lava33.width))) || !(((snake.y + snake.height) < (lava34.y- 4)) || (snake.y > (lava34.y + lava34.height- 4)) || ((snake.x + snake.width) < lava34.x) || (snake.x > (lava34.x + lava34.width))) || !(((snake.y + snake.height) < (lava35.y- 4)) || (snake.y > (lava35.y + lava35.height- 4)) || ((snake.x + snake.width) < lava35.x) || (snake.x > (lava35.x + lava35.width))) || !(((snake.y + snake.height) < (lava36.y- 4)) || (snake.y > (lava36.y + lava36.height- 4)) || ((snake.x + snake.width) < lava36.x) || (snake.x > (lava36.x + lava36.width))) || !(((snake.y + snake.height) < (lava37.y- 4)) || (snake.y > (lava37.y + lava37.height- 4)) || ((snake.x + snake.width) < lava37.x) || (snake.x > (lava37.x + lava37.width))) || !(((snake.y + snake.height) < (lava38.y- 4)) || (snake.y > (lava38.y + lava38.height- 4)) || ((snake.x + snake.width) < lava38.x) || (snake.x > (lava38.x + lava38.width))) || !(((snake.y + snake.height) < (lava39.y- 4)) || (snake.y > (lava39.y + lava39.height- 4)) || ((snake.x + snake.width) < lava39.x) || (snake.x > (lava39.x + lava39.width))) || !(((snake.y + snake.height) < (lava40.y- 4)) || (snake.y > (lava40.y + lava40.height- 4)) || ((snake.x + snake.width) < lava40.x) || (snake.x > (lava40.x + lava40.width)))) {
+                if (!(((snake.y + snake.height) < (lava.y- 4)) || (snake.y > (lava.y + lava.height- 4)) || ((snake.x + snake.width) < lava.x) || (snake.x > (lava.x + lava.width))) || !(((snake.y + snake.height) < (lava1.y- 4)) || (snake.y > (lava1.y + lava1.height- 4)) || ((snake.x + snake.width) < lava1.x) || (snake.x > (lava1.x + lava1.width))) || !(((snake.y + snake.height) < (lava2.y- 4)) || (snake.y > (lava2.y + lava2.height- 4)) || ((snake.x + snake.width) < lava2.x) || (snake.x > (lava2.x + lava2.width))) || !(((snake.y + snake.height) < (lava3.y- 4)) || (snake.y > (lava3.y + lava3.height- 4)) || ((snake.x + snake.width) < lava3.x) || (snake.x > (lava3.x + lava3.width))) || !(((snake.y + snake.height) < (lava4.y- 4)) || (snake.y > (lava4.y + lava4.height- 4)) || ((snake.x + snake.width) < lava4.x) || (snake.x > (lava4.x + lava4.width))) || !(((snake.y + snake.height) < (lava5.y- 4)) || (snake.y > (lava5.y + lava5.height- 4)) || ((snake.x + snake.width) < lava5.x) || (snake.x > (lava5.x + lava5.width))) || !(((snake.y + snake.height) < (lava6.y- 4)) || (snake.y > (lava6.y + lava6.height- 4)) || ((snake.x + snake.width) < lava6.x) || (snake.x > (lava6.x + lava6.width))) || !(((snake.y + snake.height) < (lava7.y- 4)) || (snake.y > (lava7.y + lava7.height- 4)) || ((snake.x + snake.width) < lava7.x) || (snake.x > (lava7.x + lava7.width))) || !(((snake.y + snake.height) < (lava8.y- 4)) || (snake.y > (lava8.y + lava8.height- 4)) || ((snake.x + snake.width) < lava8.x) || (snake.x > (lava8.x + lava8.width))) || !(((snake.y + snake.height) < (lava9.y- 4)) || (snake.y > (lava9.y + lava9.height- 4)) || ((snake.x + snake.width) < lava9.x) || (snake.x > (lava9.x + lava9.width))) || !(((snake.y + snake.height) < (lava10.y- 4)) || (snake.y > (lava10.y + lava10.height- 4)) || ((snake.x + snake.width) < lava10.x) || (snake.x > (lava10.x + lava10.width))) || !(((snake.y + snake.height) < (lava11.y- 4)) || (snake.y > (lava11.y + lava11.height- 4)) || ((snake.x + snake.width) < lava11.x) || (snake.x > (lava11.x + lava11.width))) || !(((snake.y + snake.height) < (lava12.y- 4)) || (snake.y > (lava12.y + lava12.height- 4)) || ((snake.x + snake.width) < lava12.x) || (snake.x > (lava12.x + lava12.width))) || !(((snake.y + snake.height) < (lava13.y- 4)) || (snake.y > (lava13.y + lava13.height- 4)) || ((snake.x + snake.width) < lava13.x) || (snake.x > (lava13.x + lava13.width))) || !(((snake.y + snake.height) < (lava14.y- 4)) || (snake.y > (lava14.y + lava14.height- 4)) || ((snake.x + snake.width) < lava14.x) || (snake.x > (lava14.x + lava14.width))) || !(((snake.y + snake.height) < (lava15.y- 4)) || (snake.y > (lava15.y + lava15.height- 4)) || ((snake.x + snake.width) < lava15.x) || (snake.x > (lava15.x + lava15.width))) || !(((snake.y + snake.height) < (lava16.y- 4)) || (snake.y > (lava16.y + lava16.height- 4)) || ((snake.x + snake.width) < lava16.x) || (snake.x > (lava16.x + lava16.width))) || !(((snake.y + snake.height) < (lava17.y- 4)) || (snake.y > (lava17.y + lava17.height- 4)) || ((snake.x + snake.width) < lava17.x) || (snake.x > (lava17.x + lava17.width))) || !(((snake.y + snake.height) < (lava18.y- 4)) || (snake.y > (lava18.y + lava18.height- 4)) || ((snake.x + snake.width) < lava18.x) || (snake.x > (lava18.x + lava18.width))) || !(((snake.y + snake.height) < (lava19.y- 4)) || (snake.y > (lava19.y + lava19.height- 4)) || ((snake.x + snake.width) < lava19.x) || (snake.x > (lava19.x + lava19.width))) || !(((snake.y + snake.height) < (lava20.y- 4)) || (snake.y > (lava20.y + lava20.height- 4)) || ((snake.x + snake.width) < lava20.x) || (snake.x > (lava20.x + lava20.width))) || !(((snake.y + snake.height) < (lava21.y- 4)) || (snake.y > (lava21.y + lava21.height- 4)) || ((snake.x + snake.width) < lava21.x) || (snake.x > (lava21.x + lava21.width))) || !(((snake.y + snake.height) < (lava22.y- 4)) || (snake.y > (lava22.y + lava22.height- 4)) || ((snake.x + snake.width) < lava22.x) || (snake.x > (lava22.x + lava22.width))) || !(((snake.y + snake.height) < (lava23.y- 4)) || (snake.y > (lava23.y + lava23.height- 4)) || ((snake.x + snake.width) < lava23.x) || (snake.x > (lava23.x + lava23.width))) || !(((snake.y + snake.height) < (lava24.y- 4)) || (snake.y > (lava24.y + lava24.height- 4)) || ((snake.x + snake.width) < lava24.x) || (snake.x > (lava24.x + lava24.width))) || !(((snake.y + snake.height) < (lava25.y- 4)) || (snake.y > (lava25.y + lava25.height- 4)) || ((snake.x + snake.width) < lava25.x) || (snake.x > (lava25.x + lava25.width))) || !(((snake.y + snake.height) < (lava26.y- 4)) || (snake.y > (lava26.y + lava26.height- 4)) || ((snake.x + snake.width) < lava26.x) || (snake.x > (lava26.x + lava26.width))) || !(((snake.y + snake.height) < (lava27.y- 4)) || (snake.y > (lava27.y + lava27.height- 4)) || ((snake.x + snake.width) < lava27.x) || (snake.x > (lava27.x + lava27.width))) || !(((snake.y + snake.height) < (lava28.y- 4)) || (snake.y > (lava28.y + lava28.height- 4)) || ((snake.x + snake.width) < lava28.x) || (snake.x > (lava28.x + lava28.width))) || !(((snake.y + snake.height) < (lava29.y- 4)) || (snake.y > (lava29.y + lava29.height- 4)) || ((snake.x + snake.width) < lava29.x) || (snake.x > (lava29.x + lava29.width))) || !(((snake.y + snake.height) < (lava30.y- 4)) || (snake.y > (lava30.y + lava30.height- 4)) || ((snake.x + snake.width) < lava30.x) || (snake.x > (lava30.x + lava30.width)))) {
                     return true;
                 };
-                console.log(lava1.y + " lavayaaa");
+
             };
             var ToxicWater = function() {
                 this.blocks = [
@@ -406,6 +401,9 @@
                     new Block(41, 5),
                     new Block(41, 6)
                 ];
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].col += 16.5
+                }
                 this.x = this.blocks[0].col;
                 this.y = this.blocks[6].row;
                 this.width = 15;
@@ -426,7 +424,7 @@
             var non_more11 = false;
             var non_more12 = false;
             var non_more13 = false;
-            var n_more14 = false;
+            var non_more14 = false;
             var non_more15 = false;
             var non_more16 = false;
             var non_more17 = false;
@@ -444,16 +442,6 @@
             var non_more28 = false;
             var non_more29 = false;
             var non_more30 = false;
-            var non_more31 = false;
-            var non_more32 = false;
-            var non_more33 = false;
-            var non_more34 = false;
-            var non_more35 = false;
-            var non_more36 = false;
-            var non_more37 = false;
-            var non_more38 = false;
-            var non_more39 = false;
-            var non_more40 = false;
             
 //            this.blocks2 = [];
 //            this.blocks3 = [];
@@ -470,7 +458,7 @@
             //New code++
             ToxicWater.prototype.draw = function(num) {
                 if (non_more != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more = true;
@@ -493,7 +481,7 @@
             
             ToxicWater.prototype.draw1 = function(num) {
                 if (non_more1 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more1 = true;
@@ -514,7 +502,7 @@
             
             ToxicWater.prototype.draw2 = function(num) {
                 if (non_more2 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more2 = true;
@@ -534,7 +522,7 @@
             
             ToxicWater.prototype.draw3 = function(num) {
                 if (non_more3 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more3 = true;
@@ -554,7 +542,7 @@
             
             ToxicWater.prototype.draw4 = function(num) {
                 if (non_more4 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more4 = true;
@@ -574,7 +562,7 @@
             
             ToxicWater.prototype.draw5 = function(num) {
                 if (non_more5 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more5 = true;
@@ -594,7 +582,7 @@
             
             ToxicWater.prototype.draw6 = function(num) {
                 if (non_more6 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more6 = true;
@@ -614,7 +602,7 @@
             
             ToxicWater.prototype.draw7 = function(num) {
                 if (non_more7 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more7 = true;
@@ -634,7 +622,7 @@
             
             ToxicWater.prototype.draw8 = function(num) {
                 if (non_more8 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more8 = true;
@@ -654,7 +642,7 @@
             
             ToxicWater.prototype.draw9 = function(num) {
                 if (non_more9 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more9 = true;
@@ -674,7 +662,7 @@
             
             ToxicWater.prototype.draw10 = function(num) {
                 if (non_more10 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more10 = true;
@@ -694,7 +682,7 @@
             
             ToxicWater.prototype.draw11 = function(num) {
                 if (non_more11 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more11 = true;
@@ -714,7 +702,7 @@
             
             ToxicWater.prototype.draw12 = function(num) {
                 if (non_more12 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more12 = true;
@@ -734,7 +722,7 @@
             
             ToxicWater.prototype.draw13 = function(num) {
                 if (non_more13 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more13 = true;
@@ -754,7 +742,7 @@
             
             ToxicWater.prototype.draw14 = function(num) {
                 if (non_more14 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more14 = true;
@@ -774,7 +762,7 @@
             
             ToxicWater.prototype.draw15 = function(num) {
                 if (non_more15 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more15 = true;
@@ -794,7 +782,7 @@
             
             ToxicWater.prototype.draw16 = function(num) {
                 if (non_more16 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more16 = true;
@@ -814,7 +802,7 @@
             
             ToxicWater.prototype.draw17 = function(num) {
                 if (non_more17 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more17 = true;
@@ -834,7 +822,7 @@
             
             ToxicWater.prototype.draw18 = function(num) {
                 if (non_more18 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more18 = true;
@@ -854,7 +842,7 @@
             
             ToxicWater.prototype.draw19 = function(num) {
                 if (non_more19 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more19 = true;
@@ -874,7 +862,7 @@
             
             ToxicWater.prototype.draw20 = function(num) {
                 if (non_more20 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more20 = true;
@@ -893,7 +881,7 @@
             };
             ToxicWater.prototype.draw21 = function(num) {
                 if (non_more21 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more21 = true;
@@ -913,7 +901,7 @@
             
             ToxicWater.prototype.draw22 = function(num) {
                 if (non_more22 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more22 = true;
@@ -933,7 +921,7 @@
             
             ToxicWater.prototype.draw23 = function(num) {
                 if (non_more23 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more23 = true;
@@ -953,7 +941,7 @@
             
             ToxicWater.prototype.draw24 = function(num) {
                 if (non_more24 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more24 = true;
@@ -973,7 +961,7 @@
             
             ToxicWater.prototype.draw25 = function(num) {
                 if (non_more25 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more25 = true;
@@ -993,7 +981,7 @@
             
             ToxicWater.prototype.draw26 = function(num) {
                 if (non_more26 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more26 = true;
@@ -1013,7 +1001,7 @@
             
             ToxicWater.prototype.draw27 = function(num) {
                 if (non_more27 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more27 = true;
@@ -1033,7 +1021,7 @@
             
             ToxicWater.prototype.draw28 = function(num) {
                 if (non_more28 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more28 = true;
@@ -1053,7 +1041,7 @@
             
             ToxicWater.prototype.draw29 = function(num) {
                 if (non_more29 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more29 = true;
@@ -1073,7 +1061,7 @@
             
             ToxicWater.prototype.draw30 = function(num) {
                 if (non_more30 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         non_more30 = true;
@@ -1091,205 +1079,7 @@
                 }  
             };
             
-            ToxicWater.prototype.draw31 = function(num) {
-                if (non_more31 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more31 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
             
-            ToxicWater.prototype.draw32 = function(num) {
-                if (non_more32 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more32 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
-            
-            ToxicWater.prototype.draw33 = function(num) {
-                if (non_more33 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more33 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                } 
-            };
-            
-            ToxicWater.prototype.draw34 = function(num) {
-                if (non_more34 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more34 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
-            
-            ToxicWater.prototype.draw35 = function(num) {
-                if (non_more35 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more35 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                } 
-            };
-            
-            ToxicWater.prototype.draw36 = function(num) {
-                if (non_more36 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more36 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
-            
-            ToxicWater.prototype.draw37 = function(num) {
-                if (non_more37 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more37 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
-            
-            ToxicWater.prototype.draw38 = function(num) {
-                if (non_more38 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more38 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
-            
-            ToxicWater.prototype.draw39 = function(num) {
-                if (non_more39 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more39 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
-            
-            ToxicWater.prototype.draw40 = function(num) {
-                if (non_more40 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        non_more40 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    if (i % 10 == 0) {
-                        this.blocks[i].drawSquare("Green");
-                    } else {
-                        this.blocks[i].drawSquare("Blue");
-                    }
-                    
-                }  
-            };
             //New code ++
             ToxicWater.prototype.move = function() {
                 for (i = 0; i < this.blocks.length; i++) {
@@ -1511,6 +1301,9 @@
                     new Block(41, 5),
                     new Block(41, 6)
                 ];
+                for (i = 0; i < this.blocks.length; i++) {
+                    this.blocks[i].col += 16.5
+                }
                 this.x = this.blocks[0].col;
                 this.y = this.blocks[6].row;
                 this.width = 15;
@@ -1549,16 +1342,7 @@
             var no_more28 = false;
             var no_more29 = false;
             var no_more30 = false;
-            var no_more31 = false;
-            var no_more32 = false;
-            var no_more33 = false;
-            var no_more34 = false;
-            var no_more35 = false;
-            var no_more36 = false;
-            var no_more37 = false;
-            var no_more38 = false;
-            var no_more39 = false;
-            var no_more40 = false;
+            
             
 //            this.blocks2 = [];
 //            this.blocks3 = [];
@@ -1575,7 +1359,7 @@
             //New code++
             Lava.prototype.draw = function(num) {
                 if (no_more != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more = true;
@@ -1593,7 +1377,7 @@
             
             Lava.prototype.draw1 = function(num) {
                 if (no_more1 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more1 = true;
@@ -1609,7 +1393,7 @@
             
             Lava.prototype.draw2 = function(num) {
                 if (no_more2 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more2 = true;
@@ -1624,7 +1408,7 @@
             
             Lava.prototype.draw3 = function(num) {
                 if (no_more3 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more3 = true;
@@ -1639,7 +1423,7 @@
             
             Lava.prototype.draw4 = function(num) {
                 if (no_more4 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more4 = true;
@@ -1654,7 +1438,7 @@
             
             Lava.prototype.draw5 = function(num) {
                 if (no_more5 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more5 = true;
@@ -1669,7 +1453,7 @@
             
             Lava.prototype.draw6 = function(num) {
                 if (no_more6 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more6 = true;
@@ -1684,7 +1468,7 @@
             
             Lava.prototype.draw7 = function(num) {
                 if (no_more7 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more7 = true;
@@ -1699,7 +1483,7 @@
             
             Lava.prototype.draw8 = function(num) {
                 if (no_more8 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more8 = true;
@@ -1714,7 +1498,7 @@
             
             Lava.prototype.draw9 = function(num) {
                 if (no_more9 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more9 = true;
@@ -1729,7 +1513,7 @@
             
             Lava.prototype.draw10 = function(num) {
                 if (no_more10 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more10 = true;
@@ -1744,7 +1528,7 @@
             
             Lava.prototype.draw11 = function(num) {
                 if (no_more11 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more11 = true;
@@ -1759,7 +1543,7 @@
             
             Lava.prototype.draw12 = function(num) {
                 if (no_more12 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more12 = true;
@@ -1774,7 +1558,7 @@
             
             Lava.prototype.draw13 = function(num) {
                 if (no_more13 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more13 = true;
@@ -1789,7 +1573,7 @@
             
             Lava.prototype.draw14 = function(num) {
                 if (no_more14 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more14 = true;
@@ -1804,7 +1588,7 @@
             
             Lava.prototype.draw15 = function(num) {
                 if (no_more15 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more15 = true;
@@ -1819,7 +1603,7 @@
             
             Lava.prototype.draw16 = function(num) {
                 if (no_more16 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more16 = true;
@@ -1834,7 +1618,7 @@
             
             Lava.prototype.draw17 = function(num) {
                 if (no_more17 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more17 = true;
@@ -1849,7 +1633,7 @@
             
             Lava.prototype.draw18 = function(num) {
                 if (no_more18 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more18 = true;
@@ -1864,7 +1648,7 @@
             
             Lava.prototype.draw19 = function(num) {
                 if (no_more19 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more19 = true;
@@ -1879,7 +1663,7 @@
             
             Lava.prototype.draw20 = function(num) {
                 if (no_more20 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more20 = true;
@@ -1893,7 +1677,7 @@
             };
             Lava.prototype.draw21 = function(num) {
                 if (no_more21 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more21 = true;
@@ -1908,7 +1692,7 @@
             
             Lava.prototype.draw22 = function(num) {
                 if (no_more22 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more22 = true;
@@ -1923,7 +1707,7 @@
             
             Lava.prototype.draw23 = function(num) {
                 if (no_more23 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more23 = true;
@@ -1938,7 +1722,7 @@
             
             Lava.prototype.draw24 = function(num) {
                 if (no_more24 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more24 = true;
@@ -1953,7 +1737,7 @@
             
             Lava.prototype.draw25 = function(num) {
                 if (no_more25 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more25 = true;
@@ -1968,7 +1752,7 @@
             
             Lava.prototype.draw26 = function(num) {
                 if (no_more26 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more26 = true;
@@ -1983,7 +1767,7 @@
             
             Lava.prototype.draw27 = function(num) {
                 if (no_more27 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more27 = true;
@@ -1998,7 +1782,7 @@
             
             Lava.prototype.draw28 = function(num) {
                 if (no_more28 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more28 = true;
@@ -2013,7 +1797,7 @@
             
             Lava.prototype.draw29 = function(num) {
                 if (no_more29 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more29 = true;
@@ -2028,7 +1812,7 @@
             
             Lava.prototype.draw30 = function(num) {
                 if (no_more30 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
+                    num = Math.floor(Math.random() * 3) * 16.4;
                     for (k = 0; k < this.blocks.length; k++) {
                         this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
                         no_more30 = true;
@@ -2041,155 +1825,7 @@
                 } 
             };
             
-            Lava.prototype.draw31 = function(num) {
-                if (no_more31 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more31 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
             
-            Lava.prototype.draw32 = function(num) {
-                if (no_more32 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more32 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw33 = function(num) {
-                if (no_more33 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more33 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw34 = function(num) {
-                if (no_more34 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more34 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw35 = function(num) {
-                if (no_more35 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more35 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw36 = function(num) {
-                if (no_more36 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more36 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw37 = function(num) {
-                if (no_more37 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more37 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw38 = function(num) {
-                if (no_more38 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more38 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw39 = function(num) {
-                if (no_more39 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more39 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
-            
-            Lava.prototype.draw40 = function(num) {
-                if (no_more40 != true) {
-                    num = Math.floor(Math.random() * 5) * 16.4;
-                    for (k = 0; k < this.blocks.length; k++) {
-                        this.blocks[k] = new Block(num + this.blocks[k].col, this.blocks[k].row)
-                        no_more40 = true;
-                    }
-                    this.x = this.blocks[0].col;
-                    this.y = this.blocks[6].row;
-                }
-                for (i = 0; i < this.blocks.length; i++) {
-                    this.blocks[i].drawSquare("Orange")
-                } 
-            };
             //New code ++
             Lava.prototype.move = function() {
                 for (i = 0; i < this.blocks.length; i++) {
@@ -2350,16 +1986,6 @@
             var lava28 = new Lava();
             var lava29 = new Lava();
             var lava30 = new Lava();
-            var lava31 = new Lava();
-            var lava32 = new Lava();
-            var lava33 = new Lava();
-            var lava34 = new Lava();
-            var lava35 = new Lava();
-            var lava36 = new Lava();
-            var lava37 = new Lava();
-            var lava38 = new Lava();
-            var lava39 = new Lava();
-            var lava40 = new Lava();
             var toxicWater = new ToxicWater();
             var toxicWater1 = new ToxicWater();
             var toxicWater2 = new ToxicWater();
@@ -2391,18 +2017,8 @@
             var toxicWater28 = new ToxicWater();
             var toxicWater29 = new ToxicWater();
             var toxicWater30 = new ToxicWater();
-            var toxicWater31 = new ToxicWater();
-            var toxicWater32 = new ToxicWater();
-            var toxicWater33 = new ToxicWater();
-            var toxicWater34 = new ToxicWater();
-            var toxicWater35 = new ToxicWater();
-            var toxicWater36 = new ToxicWater();
-            var toxicWater37 = new ToxicWater();
-            var toxicWater38 = new ToxicWater();
-            var toxicWater39 = new ToxicWater();
-            var toxicWater40 = new ToxicWater();
             var x = 60000;
-            var tw = 1000;
+            var tw = 500;
             var one = 1;
             var enddone = function() {
                 clearInterval(yeet);
@@ -2432,237 +2048,177 @@
                 setTimeout(function() { 
                     if (end != true) {
                         lava2.draw2();
-                        lava2.move1();  
+                        lava2.move2();  
                     }
                 }, 6000);
                 setTimeout(function() {
                     if (end != true) {
                         lava3.draw3();
-                        lava3.move1();  
+                        lava3.move3();  
                     }
                 }, 9000);
                 setTimeout(function() {
                     if (end != true) {
                         lava4.draw4();
-                        lava4.move1();  
+                        lava4.move3();  
                     }
                 }, 12000);
                 setTimeout(function() {
                     if (end != true) {
                         lava5.draw5();
-                        lava5.move2();  
+                        lava5.move4();  
                     }
                 }, 15000);
                 setTimeout(function() {
                     if (end != true) {
                         lava6.draw6();
-                        lava6.move2();  
+                        lava6.move4();  
                     }
                 }, 18000);
                 setTimeout(function() {
                     if (end != true) {
                         lava7.draw7();
-                        lava7.move2();  
+                        lava7.move5();  
                     }
                 }, 21000);
                 setTimeout(function() {
                     if (end != true) {
                         lava8.draw8();
-                        lava8.move2();  
+                        lava8.move5();  
                     }
                 }, 24000);
                 setTimeout(function() {
                     if (end != true) {
                         lava9.draw9();
-                        lava9.move3();  
+                        lava9.move6();  
                     }
                 }, 27000);
                 setTimeout(function() {
                     if (end != true) {
                         lava10.draw10();
-                        lava10.move3();  
+                        lava10.move6();  
                     }
                 }, 30000);
                 setTimeout(function() {
                     if (end != true) {
                         lava11.draw11();
-                        lava11.move3();  
+                        lava11.move6();  
                     }
                 }, 33000);
                 setTimeout(function() {
                     if (end != true) {
                         lava12.draw12();
-                        lava12.move3();  
+                        lava12.move7();  
                     }
                 }, 36000);
                 setTimeout(function() {
                     if (end != true) {
                         lava13.draw13();
-                        lava13.move4();  
+                        lava13.move7();  
                     }
                 }, 39000);
                 setTimeout(function() {
                     if (end != true) {
                         lava14.draw14();
-                        lava14.move4();  
+                        lava14.move7();  
                     }
                 }, 42000);
                 setTimeout(function() {
                     if (end != true) {
                         lava15.draw15();
-                        lava15.move4();  
+                        lava15.move8();  
                     }
                 }, 45000);
                 setTimeout(function() {
                     if (end != true) {
                         lava16.draw16();
-                        lava16.move4();  
+                        lava16.move8();  
                     }
                 }, 48000);
                 setTimeout(function() {
                     if (end != true) {
                         lava17.draw17();
-                        lava17.move5();  
+                        lava17.move8();  
                     }
                 }, 51000);
                 setTimeout(function() {
                     if (end != true) {
                         lava18.draw18();
-                        lava18.move5();  
+                        lava18.move8();  
                     }
                 }, 54000);
                 setTimeout(function() {
                     if (end != true) {
                         lava19.draw19();
-                        lava19.move5();  
+                        lava19.move9();  
                     }
                 }, 57000);
                 setTimeout(function() {
                     if (end != true) {
                         lava20.draw20();
-                        lava20.move5();  
+                        lava20.move9();  
                     }
                 }, 60000);
                 setTimeout(function() {
                     if (end != true) {
                         lava21.draw21();
-                        lava21.move6();  
+                        lava21.move9();  
                     }
                 }, 3000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava22.draw22();
-                        lava22.move6();  
+                        lava22.move10();  
                     }
                 }, 6000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava23.draw23();
-                        lava23.move6();  
+                        lava23.move10();  
                     }
                 }, 9000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava24.draw24();
-                        lava24.move6();  
+                        lava24.move10();  
                     }
                 }, 12000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava25.draw25();
-                        lava25.move7();  
+                        lava25.move11();  
                     }
                 }, 15000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava26.draw26();
-                        lava26.move7();  
+                        lava26.move11();  
                     }
                 }, 18000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava27.draw27();
-                        lava27.move7();  
+                        lava27.move11();  
                     }
                 }, 21000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava28.draw28();
-                        lava28.move8();  
+                        lava28.move12();  
                     }
                 }, 24000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava29.draw29();
-                        lava29.move8();  
+                        lava29.move12();  
                     }
                 }, 27000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         lava30.draw30();
-                        lava30.move8();  
+                        lava30.move13();  
                     }
                 }, 30000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava31.draw31();
-                        lava31.move9();  
-                    }
-                }, 33000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava32.draw32();
-                        lava32.move9();  
-                    }
-                }, 36000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava33.draw33();
-                        lava33.move9();  
-                    }
-                }, 39000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava34.draw34();
-                        lava34.move10();  
-                    }
-                }, 42000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava35.draw35();
-                        lava35.move10();  
-                    }
-                }, 45000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava36.draw36();
-                        lava36.move11();  
-                    }
-                }, 48000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava37.draw37();
-                        lava37.move11();  
-                    }
-                }, 51000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava38.draw38();
-                        lava38.move12();  
-                    }
-                }, 54000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava39.draw39();
-                        lava39.move12();  
-                    }
-                }, 57000 + x);
-                setTimeout(function() {
-                    if (end != true) {
-                        lava40.draw40();
-                        lava40.move13();  
-                    }
-                }, 60000 + x);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater1.draw1();
@@ -2672,240 +2228,177 @@
                 setTimeout(function() { 
                     if (end != true) {
                         toxicWater2.draw2();
-                        toxicWater2.move1();  
+                        toxicWater2.move2();  
                     }
                 }, 6000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater3.draw3();
-                        toxicWater3.move1();  
+                        toxicWater3.move2();  
                     }
                 }, 9000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater4.draw4();
-                        toxicWater4.move1();  
+                        toxicWater4.move2();  
                     }
                 }, 12000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater5.draw5();
-                        toxicWater5.move2();  
+                        toxicWater5.move3();  
                     }
                 }, 15000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater6.draw6();
-                        toxicWater6.move2();  
+                        toxicWater6.move3();  
                     }
                 }, 18000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater7.draw7();
-                        toxicWater7.move2();  
+                        toxicWater7.move3();  
+                    }
+                }, 19000 + tw);
+                setTimeout(function() {
+                    if (end != true) {
+                        toxicWater8.draw8();
+                        toxicWater8.move4();  
                     }
                 }, 21000 + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater8.draw8();
-                        toxicWater8.move2();  
+                        toxicWater9.draw9();
+                        toxicWater9.move4();  
                     }
                 }, 24000 + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater9.draw9();
-                        toxicWater9.move3();  
-                    }
-                }, 27000 + tw);
-                setTimeout(function() {
-                    if (end != true) {
                         toxicWater10.draw10();
-                        toxicWater10.move3();  
+                        toxicWater10.move5();  
                     }
-                }, 30000 + tw);
+                }, 28000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater11.draw11();
-                        toxicWater11.move3();  
+                        toxicWater11.move5();  
                     }
-                }, 33000 + tw);
+                }, 32000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater12.draw12();
-                        toxicWater12.move3();  
+                        toxicWater12.move5();  
                     }
                 }, 36000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater13.draw13();
-                        toxicWater13.move4();  
+                        toxicWater13.move6();  
                     }
-                }, 39000 + tw);
+                }, 40000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater14.draw14();
-                        toxicWater14.move4();  
+                        toxicWater14.move6();  
                     }
-                }, 42000 + tw);
+                }, 44000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater15.draw15();
-                        toxicWater15.move4();  
+                        toxicWater15.move7();  
                     }
-                }, 45000 + tw);
+                }, 47000 + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater16.draw16();
-                        toxicWater16.move4();  
-                    }
-                }, 48000 + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater17.draw17();
-                        toxicWater17.move5();  
+                        toxicWater16.move7();  
                     }
                 }, 51000 + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater18.draw18();
-                        toxicWater18.move5();  
+                        toxicWater17.draw17();
+                        toxicWater17.move7();  
                     }
                 }, 54000 + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater19.draw19();
-                        toxicWater19.move5();  
+                        toxicWater18.draw18();
+                        toxicWater18.move8();  
                     }
                 }, 57000 + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater20.draw20();
-                        toxicWater20.move5();  
+                        toxicWater19.draw19();
+                        toxicWater19.move8();  
                     }
                 }, 60000 + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater21.draw21();
-                        toxicWater21.move6();  
+                        toxicWater20.draw20();
+                        toxicWater20.move9();  
                     }
-                }, 3000 + x + tw);
+                }, 63000 + tw);
+                setTimeout(function() {
+                    if (end != true) {
+                        toxicWater21.draw21();
+                        toxicWater21.move9();  
+                    }
+                }, 7000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater22.draw22();
-                        toxicWater22.move6();  
+                        toxicWater22.move9();  
                     }
-                }, 6000 + x + tw);
+                }, 10000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater23.draw23();
-                        toxicWater23.move6();  
+                        toxicWater23.move10();  
                     }
-                }, 9000 + x + tw);
+                }, 13000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater24.draw24();
-                        toxicWater24.move6();  
+                        toxicWater24.move10();  
                     }
-                }, 12000 + x + tw);
+                }, 16000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater25.draw25();
-                        toxicWater25.move7();  
+                        toxicWater25.move11();  
                     }
-                }, 15000 + x + tw);
+                }, 19000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater26.draw26();
-                        toxicWater26.move7();  
-                    }
-                }, 18000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater27.draw27();
-                        toxicWater27.move7();  
+                        toxicWater26.move11();  
                     }
                 }, 21000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
-                        toxicWater28.draw28();
-                        toxicWater28.move8();  
+                        toxicWater27.draw27();
+                        toxicWater27.move12();  
                     }
-                }, 24000 + x + tw);
+                }, 23000 + x + tw);
+                setTimeout(function() {
+                    if (end != true) {
+                        toxicWater28.draw28();
+                        toxicWater28.move12();  
+                    }
+                }, 25000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater29.draw29();
-                        toxicWater29.move8();  
+                        toxicWater29.move13();  
                     }
                 }, 27000 + x + tw);
                 setTimeout(function() {
                     if (end != true) {
                         toxicWater30.draw30();
-                        toxicWater30.move8();  
+                        toxicWater30.move13();  
                     }
-                }, 30000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater31.draw31();
-                        toxicWater31.move9();  
-                    }
-                }, 33000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater32.draw32();
-                        toxicWater32.move9();  
-                    }
-                }, 36000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater33.draw33();
-                        toxicWater33.move9();  
-                    }
-                }, 39000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater34.draw34();
-                        toxicWater34.move10();  
-                    }
-                }, 42000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater35.draw35();
-                        toxicWater35.move10();  
-                    }
-                }, 45000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater36.draw36();
-                        toxicWater36.move11();  
-                    }
-                }, 48000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater37.draw37();
-                        toxicWater37.move11();  
-                    }
-                }, 51000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater38.draw38();
-                        toxicWater38.move12();  
-                    }
-                }, 54000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater39.draw39();
-                        toxicWater39.move12();  
-                    }
-                }, 57000 + x + tw);
-                setTimeout(function() {
-                    if (end != true) {
-                        toxicWater40.draw40();
-                        toxicWater40.move13();  
-                    }
-                }, 60000 + x);
-                one = one + 1;
-                console.log("working..." + one);
-                //new code ++
+                }, 29000 + x + tw);
                 drawBorder();
             }, 100);  
 </script>
